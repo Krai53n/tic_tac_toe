@@ -46,11 +46,9 @@ def __check_win():
     '''
     for i in range(len(win_fields)):
         nums = win_fields[i]
-        # print(nums)
         signs = []
         for m in nums:
             signs.append(fields[m])
-        # print(signs)
 
         if ((signs[0] == signs[1]) and (signs[1] == signs[2]) and
             (signs[0] == signs[2])):
