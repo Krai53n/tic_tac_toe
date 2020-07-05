@@ -209,7 +209,7 @@ def cmd_f_8():
             field_8['activeforeground'] = COLOR_O
 
 
-### buttons which is fields
+### buttons which are fields
 field_0 = tk.Button(
                 text = '',
                 font = ('SourceCodePro-Bold', 50),
