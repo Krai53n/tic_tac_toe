@@ -4,18 +4,20 @@ from tkinter import messagebox as mb
 from sys import exit as sysexit
 
 
-root = tk.Tk()             # settings
-root.title('Tic-Tac-Toe')  # of
-root.resizable(0, 0)       # window
-
-
 ### CONSTANTS
 WIN_FIELDS = ((0, 1, 2), (3, 4, 5), (6, 7, 8), # constant variable
               (0, 3, 6), (1, 4, 7), (2, 5, 8), # where we set
               (0, 4, 8), (2, 4, 6))            # win fields
 # colors of signs
-COLOR_X = 'red'
-COLOR_O = 'blue'
+COLOR_X = '#51CFC8'
+COLOR_O = '#f5b849'
+BACKGROUND = '#28313D'
+
+### BUILDING WINDOW
+root = tk.Tk()             # settings
+root.title('Tic-Tac-Toe')  # of
+root.resizable(0, 0)       # window
+root.config(bg = BACKGROUND)
 
 
 ### for move
@@ -213,7 +215,9 @@ field_0 = tk.Button(
                 font = ('SourceCodePro-Bold', 50),
                 width = 2,
                 bd = 1,
-                command = cmd_f_0
+                command = cmd_f_0,
+                bg = BACKGROUND,
+                activebackground = BACKGROUND
                 )
 field_0.grid()
 
@@ -222,7 +226,9 @@ field_1 = tk.Button(
                 font = ('SourceCodePro-Bold', 50),
                 width = 2,
                 bd = 1,
-                command = cmd_f_1
+                command = cmd_f_1,
+                bg = BACKGROUND,
+                activebackground = BACKGROUND
                 )
 field_1.grid(row = 0, column = 1)
 
@@ -231,7 +237,9 @@ field_2 = tk.Button(
                 font = ('SourceCodePro-Bold', 50),
                 width = 2,
                 bd = 1,
-                command = cmd_f_2
+                command = cmd_f_2,
+                bg = BACKGROUND,
+                activebackground = BACKGROUND
                 )
 field_2.grid(row = 0, column = 2)
 
@@ -240,7 +248,9 @@ field_3 = tk.Button(
                 font = ('SourceCodePro-Bold', 50),
                 width = 2,
                 bd = 1,
-                command = cmd_f_3
+                command = cmd_f_3,
+                bg = BACKGROUND,
+                activebackground = BACKGROUND
                 )
 field_3.grid(row = 1)
 
@@ -249,7 +259,9 @@ field_4 = tk.Button(
                 font = ('SourceCodePro-Bold', 50),
                 width = 2,
                 bd = 1,
-                command = cmd_f_4
+                command = cmd_f_4,
+                bg = BACKGROUND,
+                activebackground = BACKGROUND
                 )
 field_4.grid(row = 1, column = 1)
 
@@ -258,7 +270,9 @@ field_5 = tk.Button(
                 font = ('SourceCodePro-Bold', 50),
                 width = 2,
                 bd = 1,
-                command = cmd_f_5
+                command = cmd_f_5,
+                bg = BACKGROUND,
+                activebackground = BACKGROUND
                 )
 field_5.grid(row = 1, column = 2)
 
@@ -267,7 +281,9 @@ field_6 = tk.Button(
                 font = ('SourceCodePro-Bold', 50),
                 width = 2,
                 bd = 1,
-                command = cmd_f_6
+                command = cmd_f_6,
+                bg = BACKGROUND,
+                activebackground = BACKGROUND
                 )
 field_6.grid(row = 2)
 
@@ -276,7 +292,9 @@ field_7 = tk.Button(
                 font = ('SourceCodePro-Bold', 50),
                 width = 2,
                 bd = 1,
-                command = cmd_f_7
+                command = cmd_f_7,
+                bg = BACKGROUND,
+                activebackground = BACKGROUND
                 )
 field_7.grid(row = 2, column = 1)
 
@@ -285,7 +303,9 @@ field_8 = tk.Button(
                 font = ('SourceCodePro-Bold', 50),
                 width = 2,
                 bd = 1,
-                command = cmd_f_8
+                command = cmd_f_8,
+                bg = BACKGROUND,
+                activebackground = BACKGROUND
                 )
 field_8.grid(row = 2, column = 2)
 
