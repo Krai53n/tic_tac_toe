@@ -2,7 +2,6 @@
 import tkinter as tk
 from tkinter import messagebox as mb
 from sys import exit as sysexit
-from time import sleep
 
 
 root = tk.Tk()             # settings
