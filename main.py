@@ -84,7 +84,7 @@ Yes - restart. No - quit'.format(sign)
 
 def __restart():
     '''
-    Function which change the values of move and fiels
+    Function which change the values of move and fields
     to the our standart
     '''
     global move, fields
