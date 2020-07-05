@@ -1,5 +1,6 @@
 # TicTacToe game made on tkinter
 import tkinter as tk
+from tkinter import messagebox as mb
 
 
 root = tk.Tk()
@@ -8,6 +9,7 @@ root.resizable(0, 0)
 
 
 ### CONSTANTS
+
 win_fields = ((0, 1, 2), (3, 4, 5), (6, 7, 8),
               (0, 3, 6), (1, 4, 7), (2, 5, 8),
               (0, 4, 8), (2, 4, 6))
@@ -58,7 +60,29 @@ def __check_win():
 
 def __finish_game(sign):
     sign = sign.upper()
-    print('The {} win'.format(sign))
+    mes = 'The {} win\nRestart the game?\n\
+Yes - restart. No - quit'.format(sign)
+    restart = mb.askquestion(message = mes)
+    if restart == 'yes':
+        __restart()
+    else:
+        quit()
+
+def __restart():
+    global move, fields
+    move = 'x'
+    fields = ['*', '*', '*', '*', '*', '*', '*', '*', '*']
+
+    field_0['text'] = ''
+    field_1['text'] = ''
+    field_2['text'] = ''
+    field_3['text'] = ''
+    field_4['text'] = ''
+    field_5['text'] = ''
+    field_6['text'] = ''
+    field_7['text'] = ''
+    field_8['text'] = ''
+
 
 ### commands for fields
 def cmd_f_0():
