@@ -1,6 +1,7 @@
 # TicTacToe game made on tkinter
 import tkinter as tk
 from tkinter import messagebox as mb
+from sys import exit as sysexit
 
 
 root = tk.Tk()
@@ -66,7 +67,7 @@ Yes - restart. No - quit'.format(sign)
     if restart == 'yes':
         __restart()
     else:
-        quit()
+        sysexit()
 
 def __restart():
     global move, fields
