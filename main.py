@@ -8,10 +8,13 @@ from sys import exit as sysexit
 WIN_FIELDS = ((0, 1, 2), (3, 4, 5), (6, 7, 8), # constant variable
               (0, 3, 6), (1, 4, 7), (2, 5, 8), # where we set
               (0, 4, 8), (2, 4, 6))            # win fields
+BACKGROUND = '#28313D'
+FONT = 'SourceCodePro-Bold'
+SIZE = 50
 # colors of signs
 COLOR_X = '#51CFC8'
 COLOR_O = '#f5b849'
-BACKGROUND = '#28313D'
+
 
 ### BUILDING WINDOW
 root = tk.Tk()             # settings
@@ -84,7 +87,7 @@ Yes - restart. No - quit'.format(sign)
 
 def __restart():
     '''
-    Function which change the values of move and fields
+    Function which change the values of move and fiels
     to the our standart
     '''
     global move, fields
@@ -209,10 +212,10 @@ def cmd_f_8():
             field_8['activeforeground'] = COLOR_O
 
 
-### buttons which are fields
+### buttons which is fields
 field_0 = tk.Button(
                 text = '',
-                font = ('SourceCodePro-Bold', 50),
+                font = (FONT, SIZE),
                 width = 2,
                 bd = 1,
                 command = cmd_f_0,
@@ -223,7 +226,7 @@ field_0.grid()
 
 field_1 = tk.Button(
                 text = '',
-                font = ('SourceCodePro-Bold', 50),
+                font = (FONT, SIZE),
                 width = 2,
                 bd = 1,
                 command = cmd_f_1,
@@ -234,7 +237,7 @@ field_1.grid(row = 0, column = 1)
 
 field_2 = tk.Button(
                 text = '',
-                font = ('SourceCodePro-Bold', 50),
+                font = (FONT, SIZE),
                 width = 2,
                 bd = 1,
                 command = cmd_f_2,
@@ -245,7 +248,7 @@ field_2.grid(row = 0, column = 2)
 
 field_3 = tk.Button(
                 text = '',
-                font = ('SourceCodePro-Bold', 50),
+                font = (FONT, SIZE),
                 width = 2,
                 bd = 1,
                 command = cmd_f_3,
@@ -256,7 +259,7 @@ field_3.grid(row = 1)
 
 field_4 = tk.Button(
                 text = '',
-                font = ('SourceCodePro-Bold', 50),
+                font = (FONT, SIZE),
                 width = 2,
                 bd = 1,
                 command = cmd_f_4,
@@ -267,7 +270,7 @@ field_4.grid(row = 1, column = 1)
 
 field_5 = tk.Button(
                 text = '',
-                font = ('SourceCodePro-Bold', 50),
+                font = (FONT, SIZE),
                 width = 2,
                 bd = 1,
                 command = cmd_f_5,
@@ -278,7 +281,7 @@ field_5.grid(row = 1, column = 2)
 
 field_6 = tk.Button(
                 text = '',
-                font = ('SourceCodePro-Bold', 50),
+                font = (FONT, SIZE),
                 width = 2,
                 bd = 1,
                 command = cmd_f_6,
@@ -289,7 +292,7 @@ field_6.grid(row = 2)
 
 field_7 = tk.Button(
                 text = '',
-                font = ('SourceCodePro-Bold', 50),
+                font = (FONT, SIZE),
                 width = 2,
                 bd = 1,
                 command = cmd_f_7,
@@ -300,7 +303,7 @@ field_7.grid(row = 2, column = 1)
 
 field_8 = tk.Button(
                 text = '',
-                font = ('SourceCodePro-Bold', 50),
+                font = (FONT, SIZE),
                 width = 2,
                 bd = 1,
                 command = cmd_f_8,
