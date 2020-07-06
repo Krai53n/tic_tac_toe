@@ -75,7 +75,7 @@ def __finish_game(sign):
     '''
     Close function where we get the sign from __chek_win
     '''
-    print('\a')                               # make bip
+    print('\a') # make bip
     sign = sign.upper()                       # make the sign upper
     # our message after finish the game
     mes = 'The {} win\nRestart the game?\n\
