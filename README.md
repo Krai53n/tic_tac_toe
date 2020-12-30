@@ -1,4 +1,5 @@
-# tic_tac_toe
+# TicTacToe
+Game written in tkinter
 ### TODO
 - [ ] add more modules
     - [ ] add json file for colors
