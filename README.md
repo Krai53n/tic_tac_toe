@@ -8,3 +8,6 @@ Game written in tkinter
 - [ ] change structer. Use classes and `if __name__...`
 - [ ] make simple AI
 - [ ] maybe add music
+- [ ] UI
+    - [ ] add settings where
+        - [ ] user could change colors of interface
