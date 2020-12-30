@@ -7,3 +7,4 @@ Game written in tkinter
 - [ ] change functions `cmd_f_*`
 - [ ] change structer. Use classes and `if __name__...`
 - [ ] make simple AI
+- [ ] maybe add music
