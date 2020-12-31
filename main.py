@@ -9,33 +9,42 @@ from sys import exit as sysexit
 WIN_FIELDS = ((0, 1, 2), (3, 4, 5), (6, 7, 8), # constant variable
               (0, 3, 6), (1, 4, 7), (2, 5, 8), # where we set
               (0, 4, 8), (2, 4, 6))            # win fields
-BACKGROUND = '#28313D'
-FONT = 'SourceCodePro-Bold'
-SIZE = 50
-# colors of signs
-COLOR_X = '#51CFC8'
-COLOR_O = '#f5b849'
+# BACKGROUND = '#28313D'
+# FONT = 'SourceCodePro-Bold'
+# SIZE = 50
+# # colors of signs
+# self.color_x = '#51CFC8'
+# self.color_o = '#f5b849'
 
 
 class Button(TkButton):
     '''Button is a piece of game field'''
     def __init__(self, command, text = ''):
+        self.load_config()
         super().__init__(master = root,
                          text = text,
-                         font = (FONT, SIZE),
+                         font = (self.font, self.size),
                          width = 2,
                          bd = 1,
                          command = command,
-                         bg = BACKGROUND,
-                         activebackground = BACKGROUND
+                         bg = self.background,
+                         activebackground = self.background
                          )
+
+    def load_config(self):
+        from json import load
+        with open('config.json', 'r') as rf:
+            data = load(rf)
+        for i in data.items():
+            exec('self.{} = "{}"'.format(i[0], i[1]))
 
 class MainWindow:
     def __init__(self, master):
+        self.load_config()
         self.master = master
         self.master.title('Tic-Tac-Toe')
         self.master.resizable(0, 0)
-        self.master.config(bg = BACKGROUND)
+        self.master.config(bg = self.background)
         self.create_widgets()
         # GAME LOGIC
         self.move = 'x'
@@ -148,100 +157,106 @@ class MainWindow:
             self.field_0['text'] = self.move
             self.mover(0)
             if self.fields[0] == 'x':
-                self.field_0['foreground'] = COLOR_X
-                self.field_0['activeforeground'] = COLOR_X
+                self.field_0['foreground'] = self.color_x
+                self.field_0['activeforeground'] = self.color_x
             else:
-                self.field_0['foreground'] = COLOR_O
-                self.field_0['activeforeground'] = COLOR_O
+                self.field_0['foreground'] = self.color_o
+                self.field_0['activeforeground'] = self.color_o
 
     def cmd_f_1(self):
         if self.fields[1] == '*':
             self.field_1['text'] = self.move
             self.mover(1)
             if self.fields[1] == 'x':
-                self.field_1['foreground'] = COLOR_X
-                self.field_1['activeforeground'] = COLOR_X
+                self.field_1['foreground'] = self.color_x
+                self.field_1['activeforeground'] = self.color_x
             else:
-                self.field_1['foreground'] = COLOR_O
-                self.field_1['activeforeground'] = COLOR_O
+                self.field_1['foreground'] = self.color_o
+                self.field_1['activeforeground'] = self.color_o
 
     def cmd_f_2(self):
         if self.fields[2] == '*':
             self.field_2['text'] = self.move
             self.mover(2)
             if self.fields[2] == 'x':
-                self.field_2['foreground'] = COLOR_X
-                self.field_2['activeforeground'] = COLOR_X
+                self.field_2['foreground'] = self.color_x
+                self.field_2['activeforeground'] = self.color_x
             else:
-                self.field_2['foreground'] = COLOR_O
-                self.field_2['activeforeground'] = COLOR_O
+                self.field_2['foreground'] = self.color_o
+                self.field_2['activeforeground'] = self.color_o
 
     def cmd_f_3(self):
         if self.fields[3] == '*':
             self.field_3['text'] = self.move
             self.mover(3)
             if self.fields[3] == 'x':
-                self.field_3['foreground'] = COLOR_X
-                self.field_3['activeforeground'] = COLOR_X
+                self.field_3['foreground'] = self.color_x
+                self.field_3['activeforeground'] = self.color_x
             else:
-                self.field_3['foreground'] = COLOR_O
-                self.field_3['activeforeground'] = COLOR_O
+                self.field_3['foreground'] = self.color_o
+                self.field_3['activeforeground'] = self.color_o
 
     def cmd_f_4(self):
         if self.fields[4] == '*':
             self.field_4['text'] = self.move
             self.mover(4)
             if self.fields[4] == 'x':
-                self.field_4['foreground'] = COLOR_X
-                self.field_4['activeforeground'] = COLOR_X
+                self.field_4['foreground'] = self.color_x
+                self.field_4['activeforeground'] = self.color_x
             else:
-                self.field_4['foreground'] = COLOR_O
-                self.field_4['activeforeground'] = COLOR_O
+                self.field_4['foreground'] = self.color_o
+                self.field_4['activeforeground'] = self.color_o
 
     def cmd_f_5(self):
         if self.fields[5] == '*':
             self.field_5['text'] = self.move
             self.mover(5)
             if self.fields[5] == 'x':
-                self.field_5['foreground'] = COLOR_X
-                self.field_5['activeforeground'] = COLOR_X
+                self.field_5['foreground'] = self.color_x
+                self.field_5['activeforeground'] = self.color_x
             else:
-                self.field_5['foreground'] = COLOR_O
-                self.field_5['activeforeground'] = COLOR_O
+                self.field_5['foreground'] = self.color_o
+                self.field_5['activeforeground'] = self.color_o
 
     def cmd_f_6(self):
         if self.fields[6] == '*':
             self.field_6['text'] = self.move
             self.mover(6)
             if self.fields[6] == 'x':
-                self.field_6['foreground'] = COLOR_X
-                self.field_6['activeforeground'] = COLOR_X
+                self.field_6['foreground'] = self.color_x
+                self.field_6['activeforeground'] = self.color_x
             else:
-                self.field_6['foreground'] = COLOR_O
-                self.field_6['activeforeground'] = COLOR_O
+                self.field_6['foreground'] = self.color_o
+                self.field_6['activeforeground'] = self.color_o
 
     def cmd_f_7(self):
         if self.fields[7] == '*':
             self.field_7['text'] = self.move
             self.mover(7)
             if self.fields[7] == 'x':
-                self.field_7['foreground'] = COLOR_X
-                self.field_7['activeforeground'] = COLOR_X
+                self.field_7['foreground'] = self.color_x
+                self.field_7['activeforeground'] = self.color_x
             else:
-                self.field_7['foreground'] = COLOR_O
-                self.field_7['activeforeground'] = COLOR_O
+                self.field_7['foreground'] = self.color_o
+                self.field_7['activeforeground'] = self.color_o
 
     def cmd_f_8(self):
         if self.fields[8] == '*':
             self.field_8['text'] = self.move
             self.mover(8)
             if self.fields[8] == 'x':
-                self.field_8['foreground'] = COLOR_X
-                self.field_8['activeforeground'] = COLOR_X
+                self.field_8['foreground'] = self.color_x
+                self.field_8['activeforeground'] = self.color_x
             else:
-                self.field_8['foreground'] = COLOR_O
-                self.field_8['activeforeground'] = COLOR_O
+                self.field_8['foreground'] = self.color_o
+                self.field_8['activeforeground'] = self.color_o
 
+    def load_config(self):
+        from json import load
+        with open('config.json', 'r') as rf:
+            data = load(rf)
+        for i in data.items():
+            exec('self.{} = "{}"'.format(i[0], i[1]))
 
 if __name__ == '__main__':
     root = Tk()
