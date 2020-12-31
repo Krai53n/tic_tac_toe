@@ -33,17 +33,30 @@ class Button(TkButton):
 class MainWindow:
     def __init__(self, master):
         self.master = master
-        self.master.configure(title = 'Tic-Tac-Toe',
-                              resizable = (0, 0)
-                              bd = BACKGROUND)
+        self.master.title('Tic-Tac-Toe')
+        self.master.resizable(0, 0)
+        self.master.config(bg = BACKGROUND)
+        self.create_widgets()
 
-
-
-### BUILDING WINDOW
-root = Tk()             # settings
-root.title('Tic-Tac-Toe')  # of
-root.resizable(0, 0)       # window
-root.config(bg = BACKGROUND)
+    def create_widgets(self):
+        self.field_0 = Button(command = cmd_f_0)
+        self.field_1 = Button(command = cmd_f_1)
+        self.field_2 = Button(command = cmd_f_2)
+        self.field_3 = Button(command = cmd_f_3)
+        self.field_4 = Button(command = cmd_f_4)
+        self.field_5 = Button(command = cmd_f_5)
+        self.field_6 = Button(command = cmd_f_6)
+        self.field_7 = Button(command = cmd_f_7)
+        self.field_8 = Button(command = cmd_f_8)
+        self.field_0.grid()
+        self.field_1.grid(row = 0, column = 1)
+        self.field_2.grid(row = 0, column = 2)
+        self.field_3.grid(row = 1)
+        self.field_4.grid(row = 1, column = 1)
+        self.field_5.grid(row = 1, column = 2)
+        self.field_6.grid(row = 2)
+        self.field_7.grid(row = 2, column = 1)
+        self.field_8.grid(row = 2, column = 2)
 
 
 ### for move
@@ -141,11 +154,11 @@ def cmd_f_0():
         field_0['text'] = move
         mover(0)
         if fields[0] == 'x':
-            field_0['foreground'] = COLOR_X
-            field_0['activeforeground'] = COLOR_X
+            self.field_0['foreground'] = COLOR_X
+            self.field_0['activeforeground'] = COLOR_X
         else:
-            field_0['foreground'] = COLOR_O
-            field_0['activeforeground'] = COLOR_O
+            self.field_0['foreground'] = COLOR_O
+            self.field_0['activeforeground'] = COLOR_O
 
 def cmd_f_1():
     if fields[1] == '*':
@@ -236,25 +249,7 @@ def cmd_f_8():
             field_8['activeforeground'] = COLOR_O
 
 
-### buttons which is fields
-field_0 = Button(command = cmd_f_0)
-field_0.grid()
-field_1 = Button(command = cmd_f_1)
-field_1.grid(row = 0, column = 1)
-field_2 = Button(command = cmd_f_2)
-field_2.grid(row = 0, column = 2)
-field_3 = Button(command = cmd_f_3)
-field_3.grid(row = 1)
-field_4 = Button(command = cmd_f_4)
-field_4.grid(row = 1, column = 1)
-field_5 = Button(command = cmd_f_5)
-field_5.grid(row = 1, column = 2)
-field_6 = Button(command = cmd_f_6)
-field_6.grid(row = 2)
-field_7 = Button(command = cmd_f_7)
-field_7.grid(row = 2, column = 1)
-field_8 = Button(command = cmd_f_8)
-field_8.grid(row = 2, column = 2)
-
-
-root.mainloop()
+if __name__ == '__main__':
+    root = Tk()
+    mnw = MainWindow(root)
+    root.mainloop()
