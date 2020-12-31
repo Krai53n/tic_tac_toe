@@ -9,12 +9,6 @@ from sys import exit as sysexit
 WIN_FIELDS = ((0, 1, 2), (3, 4, 5), (6, 7, 8), # constant variable
               (0, 3, 6), (1, 4, 7), (2, 5, 8), # where we set
               (0, 4, 8), (2, 4, 6))            # win fields
-# BACKGROUND = '#28313D'
-# FONT = 'SourceCodePro-Bold'
-# SIZE = 50
-# # colors of signs
-# self.color_x = '#51CFC8'
-# self.color_o = '#f5b849'
 
 
 class Button(TkButton):
