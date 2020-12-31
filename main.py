@@ -252,6 +252,7 @@ class MainWindow:
         for i in data.items():
             exec('self.{} = "{}"'.format(i[0], i[1]))
 
+
 if __name__ == '__main__':
     root = Tk()
     mnw = MainWindow(root)
