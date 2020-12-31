@@ -1,5 +1,6 @@
 # TicTacToe game made on tkinter
-import tkinter as tk
+from tkinter import Tk
+from tkinter import Button as TkButton
 from tkinter import messagebox as mb
 from sys import exit as sysexit
 
@@ -16,8 +17,30 @@ COLOR_X = '#51CFC8'
 COLOR_O = '#f5b849'
 
 
+class Button(TkButton):
+    '''Button is a piece of game field'''
+    def __init__(self, command, text = ''):
+        super().__init__(master = root,
+                         text = text,
+                         font = (FONT, SIZE),
+                         width = 2,
+                         bd = 1,
+                         command = command,
+                         bg = BACKGROUND,
+                         activebackground = BACKGROUND
+                         )
+
+class MainWindow:
+    def __init__(self, master):
+        self.master = master
+        self.master.configure(title = 'Tic-Tac-Toe',
+                              resizable = (0, 0)
+                              bd = BACKGROUND)
+
+
+
 ### BUILDING WINDOW
-root = tk.Tk()             # settings
+root = Tk()             # settings
 root.title('Tic-Tac-Toe')  # of
 root.resizable(0, 0)       # window
 root.config(bg = BACKGROUND)
@@ -62,7 +85,7 @@ def __check_win():
         for m in nums:
             # iterates 3 times where get the number from num
             signs.append(fields[m])     # and add value of the number
-        
+
         # check if three symbols are equal
         if ((signs[0] == signs[1]) and (signs[1] == signs[2]) and
             (signs[0] == signs[2])):
@@ -214,103 +237,23 @@ def cmd_f_8():
 
 
 ### buttons which is fields
-field_0 = tk.Button(
-                text = '',
-                font = (FONT, SIZE),
-                width = 2,
-                bd = 1,
-                command = cmd_f_0,
-                bg = BACKGROUND,
-                activebackground = BACKGROUND
-                )
+field_0 = Button(command = cmd_f_0)
 field_0.grid()
-
-field_1 = tk.Button(
-                text = '',
-                font = (FONT, SIZE),
-                width = 2,
-                bd = 1,
-                command = cmd_f_1,
-                bg = BACKGROUND,
-                activebackground = BACKGROUND
-                )
+field_1 = Button(command = cmd_f_1)
 field_1.grid(row = 0, column = 1)
-
-field_2 = tk.Button(
-                text = '',
-                font = (FONT, SIZE),
-                width = 2,
-                bd = 1,
-                command = cmd_f_2,
-                bg = BACKGROUND,
-                activebackground = BACKGROUND
-                )
+field_2 = Button(command = cmd_f_2)
 field_2.grid(row = 0, column = 2)
-
-field_3 = tk.Button(
-                text = '',
-                font = (FONT, SIZE),
-                width = 2,
-                bd = 1,
-                command = cmd_f_3,
-                bg = BACKGROUND,
-                activebackground = BACKGROUND
-                )
+field_3 = Button(command = cmd_f_3)
 field_3.grid(row = 1)
-
-field_4 = tk.Button(
-                text = '',
-                font = (FONT, SIZE),
-                width = 2,
-                bd = 1,
-                command = cmd_f_4,
-                bg = BACKGROUND,
-                activebackground = BACKGROUND
-                )
+field_4 = Button(command = cmd_f_4)
 field_4.grid(row = 1, column = 1)
-
-field_5 = tk.Button(
-                text = '',
-                font = (FONT, SIZE),
-                width = 2,
-                bd = 1,
-                command = cmd_f_5,
-                bg = BACKGROUND,
-                activebackground = BACKGROUND
-                )
+field_5 = Button(command = cmd_f_5)
 field_5.grid(row = 1, column = 2)
-
-field_6 = tk.Button(
-                text = '',
-                font = (FONT, SIZE),
-                width = 2,
-                bd = 1,
-                command = cmd_f_6,
-                bg = BACKGROUND,
-                activebackground = BACKGROUND
-                )
+field_6 = Button(command = cmd_f_6)
 field_6.grid(row = 2)
-
-field_7 = tk.Button(
-                text = '',
-                font = (FONT, SIZE),
-                width = 2,
-                bd = 1,
-                command = cmd_f_7,
-                bg = BACKGROUND,
-                activebackground = BACKGROUND
-                )
+field_7 = Button(command = cmd_f_7)
 field_7.grid(row = 2, column = 1)
-
-field_8 = tk.Button(
-                text = '',
-                font = (FONT, SIZE),
-                width = 2,
-                bd = 1,
-                command = cmd_f_8,
-                bg = BACKGROUND,
-                activebackground = BACKGROUND
-                )
+field_8 = Button(command = cmd_f_8)
 field_8.grid(row = 2, column = 2)
 
 
