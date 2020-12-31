@@ -74,7 +74,6 @@ class MainWindow:
         '''
         self.fields[field_num] = self.move
         self.__change_move()
-        self.__check_win()
 
 
     def __change_move(self):
@@ -156,6 +155,7 @@ class MainWindow:
             else:
                 self.field_0['foreground'] = self.color_o
                 self.field_0['activeforeground'] = self.color_o
+        self.__check_win()
 
     def cmd_f_1(self):
         if self.fields[1] == '*':
@@ -167,6 +167,7 @@ class MainWindow:
             else:
                 self.field_1['foreground'] = self.color_o
                 self.field_1['activeforeground'] = self.color_o
+        self.__check_win()
 
     def cmd_f_2(self):
         if self.fields[2] == '*':
@@ -178,6 +179,7 @@ class MainWindow:
             else:
                 self.field_2['foreground'] = self.color_o
                 self.field_2['activeforeground'] = self.color_o
+        self.__check_win()
 
     def cmd_f_3(self):
         if self.fields[3] == '*':
@@ -189,6 +191,7 @@ class MainWindow:
             else:
                 self.field_3['foreground'] = self.color_o
                 self.field_3['activeforeground'] = self.color_o
+        self.__check_win()
 
     def cmd_f_4(self):
         if self.fields[4] == '*':
@@ -200,6 +203,7 @@ class MainWindow:
             else:
                 self.field_4['foreground'] = self.color_o
                 self.field_4['activeforeground'] = self.color_o
+        self.__check_win()
 
     def cmd_f_5(self):
         if self.fields[5] == '*':
@@ -211,6 +215,7 @@ class MainWindow:
             else:
                 self.field_5['foreground'] = self.color_o
                 self.field_5['activeforeground'] = self.color_o
+        self.__check_win()
 
     def cmd_f_6(self):
         if self.fields[6] == '*':
@@ -222,6 +227,7 @@ class MainWindow:
             else:
                 self.field_6['foreground'] = self.color_o
                 self.field_6['activeforeground'] = self.color_o
+        self.__check_win()
 
     def cmd_f_7(self):
         if self.fields[7] == '*':
@@ -233,6 +239,7 @@ class MainWindow:
             else:
                 self.field_7['foreground'] = self.color_o
                 self.field_7['activeforeground'] = self.color_o
+        self.__check_win()
 
     def cmd_f_8(self):
         if self.fields[8] == '*':
@@ -244,6 +251,7 @@ class MainWindow:
             else:
                 self.field_8['foreground'] = self.color_o
                 self.field_8['activeforeground'] = self.color_o
+        self.__check_win()
 
     def load_config(self):
         from json import load

@@ -1,11 +1,11 @@
 # TicTacToe
 Game written in tkinter
 ### TODO
-- [ ] add more modules
-    - [ ] add json file for colors
+- [x] add more modules
+    - [x] add json file for colors
 - [ ] change docs
 - [ ] change functions `cmd_f_*`
-- [ ] change structer. Use classes and `if __name__...`
+- [x] change structer. Use classes and `if __name__...`
 - [ ] make simple AI
 - [ ] maybe add music
 - [ ] UI
