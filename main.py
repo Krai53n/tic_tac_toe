@@ -13,14 +13,15 @@ WIN_FIELDS = ((0, 1, 2), (3, 4, 5), (6, 7, 8), # constant variable
 
 class Button(TkButton):
     '''Button is a piece of game field'''
-    def __init__(self, command, text = ''):
+    def __init__(self, *args, **kwargs):
         self.load_config()
-        super().__init__(master = root,
-                         text = text,
+        super().__init__(*args,
+                         **kwargs,
+                         master = root,
+                         text = '',
                          font = (self.font, self.size),
                          width = 2,
                          bd = 1,
-                         command = command,
                          bg = self.background,
                          activebackground = self.background
                          )
