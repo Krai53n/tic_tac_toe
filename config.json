@@ -1,7 +1,7 @@
 {
-        "background": "#28313D",
-        "font": "SourceCodePro-Bold",
-        "size": 50,
-        "color_x": "#51CFC8",
-        "color_o": "#f5b849"
+        "BACKGROUND": "#28313D",
+        "FONT": "SourceCodePro-Bold",
+        "SIZE": 50,
+        "COLOR_X": "#51CFC8",
+        "COLOR_O": "#f5b849"
 }
